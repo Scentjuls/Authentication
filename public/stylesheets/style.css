@@ -1,10 +1,78 @@
 body {
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #fff;
+  background: #244f68;
 }
-.sarah {
-  padding: 20% 40%;
+.nav-link.btn.btn-primary {
+  width: 150px;
+}
+.body {
   font-weight: bold;
-  color: darkblue;
+  color: #dde;
+  position:absolute;
+  right:50px;
+  top:40%;
+}
+.right {
+  position: absolute;
+  right:70px;
+  top:30%;
+}
+.move {
+  text-align:center;
+  color:#ffe;
+}
+li {
+  margin:15px;
+}
+.cover {
+  width:30%;
+  color: #ffe;
+  background-color: #dde;
+  margin:10% auto;
+  border-radius:4px;
+}
+.cover label{
+  margin-left:20px;
+  margin-top:15px;
+  color:#000;
+}
+.cover input {
+  width:80%;
+  margin:20px;
+}
+.cover button {
+  margin:20px;
+}
+.covers {
+  width:35%;
+  color: #ffe;
+  background-color: #dde;
+  margin:5% auto;
+  border-radius:4px;
+}
+.covers label{
+  margin-left:20px;
+  margin-top:15px;
+  color:#000;
+}
+.covers input {
+  width:75%;
+  margin:20px;
+}
+.covers .btn.btn-primary {
+  margin:20px;
+  width:100px;
+}
+.semi-circle{
+  position:absolute;
+  top:0;
+  width:700px; 
+  height:700px;
+  background: #dde;
+  border-top-right-radius:100px;
+  border-bottom-right-radius: 300px;
+}
+.padlock {
+  margin: 60px;
 }

@@ -22,12 +22,12 @@ mongoose.connect(config.database);
 let db = mongoose.connection;
 
 
-//check connection
+//Check Connection
 db.once('open', function(){
     console.log("connected to MONGODB")
 });
 
-// view engine setup
+// View Engine Setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -40,7 +40,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//Express messages middlewre
+//Express Message Middleware
 app.use(require('connect-flash')());
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
@@ -64,17 +64,17 @@ app.use(expressValidator({
       };
   }
 }));
-// Express session middleware
+// Express Session Middleware
 app.use(session({
 secret:"my keyboard cat",
 resave: true,
 saveUninitialized: true
 }));
 
-//Passport confid
+//Passport Config
 require('./config/passport')(passport);
 
-//passport middleware
+//Passport Middleware 
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -87,23 +87,25 @@ app.get('*', function(req, res, next){
 app.use('/', index);
 app.use('/users', users);
 
-// catch 404 and forward to error handler
+// Catch 404n And Forward To Error Handler 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-// error handler
+// Error Handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // Set Locals, Only Providing Error In Development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+  // Render The Error Page 
   res.status(err.status || 500);
   res.render('error');
 });
 
-
+app.listen(3001, function (){
+    console.log('server started on port 3001');
+})
 module.exports = app;
